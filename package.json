@@ -17,6 +17,9 @@
   "homepage": "https://github.com/Tenirrr/utrs-be#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "sequelize": "^6.37.5",
+    "argon2": "^0.41.1"
   }
 }
