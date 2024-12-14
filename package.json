@@ -1,0 +1,19 @@
+{
+  "name": "university-ticket-reservation-system-back-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tenirrr/utrs-be.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Tenirrr/utrs-be/issues"
+  },
+  "homepage": "https://github.com/Tenirrr/utrs-be#readme",
+  "description": ""
+}
