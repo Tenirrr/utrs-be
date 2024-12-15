@@ -1,5 +1,5 @@
-const Config = {
-    dialect: 'mariadb',           // Specifies the type of database you're using
+const config = {
+    dialect: "mariadb",           // Specifies the type of database you're using
     logging: console.log,         // Logs all SQL queries
     pool: {
         max: 25,                  // The maximum number of connections in the pool.
@@ -15,12 +15,12 @@ const Config = {
         underscored: false,       // If false, the createdAt and updatedAt fields will not be automatically created.
         freezeTableName: true     // If true, Sequelize will not automatically pluralize table names.
     },
-    timezone: '+02:00',
+    timezone: "+02:00",
     dialectOptions: {
-        timezone: 'local',  
+        timezone: "local",  
         connectTimeout: 10000
     },
-    benchmark: process.env.NODE_ENV === 'development' ? true : false
+    benchmark: process.env.NODE_ENV === "development" ? true : false
 }
 
-module.exports = Config
+module.exports = config
