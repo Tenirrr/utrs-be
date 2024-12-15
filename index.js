@@ -9,7 +9,11 @@ const env = process.env
 
 const port = env.PORT || 3000;
 
-app.use(morgan("dev"))
+if (env.NODE_ENV === "development") {
+	app.use(morgan("combined"))
+} else {
+	app.use(morgan("combined"))
+}
 
 app.get('/', (req, res) => {
 	res.send('Hello, world!');
