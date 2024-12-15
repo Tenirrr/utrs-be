@@ -1,36 +1,31 @@
 const argon2 = require("argon2");
 const cfg = require("../../config/argon2.js");
 
-const hashWithSalt = async (plainText) => {
+const hash = async (plainText) => {
     try {
-
-        const hashedPassword = await argon2.hash(plainText, {
+        return await argon2.hash(plainText, {
             type: cfg.type,
             memoryCost: cfg.memoryCost,
             timeCost: cfg.timeCost,
             parallelism: cfg.parallelism,
             hashLength: cfg.hashLength,
-        });
-
-        throw "XD";
-
-        return 0, hashedPassword;
-
-    } catch (err) {
-        console.error('Error hashing password:', err);
-        return -1, false;
+        }), 0;
+    } catch (error) {
+        console.error("[ERROR] Argon2: ", error);
+        return 0, error;
     }
 }
 
-const verify = async (plainText, hash, salt) => {
+const verify = async (plainText, hash) => {
     try {
-        const salt = argon2.generateSalt(32);
-    } catch (err) {
-        console.error('Error hashing password:', err);
+        return await argon2.verify(hash, plainText), 0;
+    } catch (error) {
+        console.error("[ERROR] Argon2: ", error);
+        return 0, error;
     }
 }
 
 module.exports = {
-    hash: hashWithSalt,
+    hash: hash,
     verify: verify
 }
