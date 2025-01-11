@@ -2,7 +2,7 @@ const { Sequelize } = require("sequelize");
 const cfg = require("../../config/database.js");
 const env = process.env;
 
-const sequelize = new Sequelize(env.DB_DBNAME, env.DB_USER, env.DB_PASS, {
+const sequelize = new Sequelize(env.DB_NAME, env.DB_USER, env.DB_PASS, {
     host: env.DB_HOST,
     port: env.DB_PORT || 3306,
     dialect: cfg.dialect,
