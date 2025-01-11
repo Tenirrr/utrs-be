@@ -1,0 +1,6 @@
+const config = {
+    tokenLength: 128,
+    tokenLiveTime: 43200000
+};
+
+module.exports = config;

@@ -16,6 +16,9 @@ if (env.NODE_ENV === "development") {
 	app.use(morgan("combined"))
 }
 
+app.use(express.json());
+app.use(cookieParser());
+
 app.use("/auth", require("./src/routes/auth.js"))
 app.use("/error", require("./src/routes/error.js"))
 
